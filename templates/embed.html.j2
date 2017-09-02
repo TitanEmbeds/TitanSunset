@@ -3,14 +3,16 @@
     <head>
         <title>Titan Embeds</title>
         <style>
+            body {
+                background-color: #7986cb;
+            }
+            
             #popup {
-                position: fixed;
-                width: 100%;
-                height: 100%;
-                background-color: white;
-                left: 0px;
-                top: 0px;
-                
+                color: white;
+            }
+            
+            a {
+                color: Azure;
             }
             
             img {
@@ -28,27 +30,29 @@
             
             body {
                 margin: 0px;
-                overflow: hidden;
             }
         </style>
     </head>
     <body>
         <div id="popup">
             <a href="https://titanembeds.com/" target="_blank"><img src="https://i.imgur.com/YXfeBkn.png"></a>
-            <h1>We've got a new domain!</h1>
+            <h1>Hello. We've got a new domain!</h1>
             <p>Did you know that Titan Embeds upgraded to a new domain? If you happen to be the webmaster and seeing this popup, please update your embed url to our <a href="https://titanembeds.com/" target="_blank">new domain (https://titanembeds.com/)</a>.</p>
-            <p>The current domain that this embed is current running on ({{ url }}) is deprecated and will not be maintained anymore. There is not an exact set date of when the domain will no longer in use, but the domain will become broken after our TLS certificate expires on November 27th, 2017.</p>
+            <p>The current domain that this embed is currently running on is deprecated and will not be maintained anymore. There is not an exact set date of when the domain will no longer in use, but the domain will become broken after our TLS certificate expires on November 27th, 2017.</p>
             <p>Please visit our <a href="https://discord.io/Titan" target="_blank">support server</a> if you have any pressing questions.</p>
             <hr>
             <p>Otherwise, carry on and you may <button type="button">Dismiss</button> this overlay.</p>
         </div>
-        <iframe src="{{ url }}"></iframe>
+        <iframe src="{{ url }}" style="display: none;"></iframe>
         
         <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.js" integrity="sha256-DZAnKJ/6XZ9si04Hgrsxu/8s717jcIzLy3oi35EouyE=" crossorigin="anonymous"></script>
         <script>
             $("button").on("click", function () {
                 $("#popup").hide();
-            })
+                $("iframe").show();
+                $("iframe").focus();
+                $("body").css("background-color", "rgba(0, 0, 0, 0)");
+            });
         </script>
     </body>
 </html>
