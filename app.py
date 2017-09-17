@@ -4,7 +4,7 @@ import os
 app = Flask(__name__)
 
 def is_crawler(): # So we don't get a screwed up SEO
-    agent = request.headers.get('User-Agent').lower()
+    agent = request.headers.get('User-Agent', "").lower()
     return "bot" in agent or "crawl" in agent or "slurp" in agent or "spider" in agent or "mediapartners" in agent
 
 @app.route("/api/<path:path>", methods=["GET", "POST", "DELETE"]) # Tell the API that it doesn't exists no more
