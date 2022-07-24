@@ -1,4 +1,4 @@
-from flask import Flask, abort, request, redirect, render_template
+from flask import Flask, abort, request, redirect, render_template, url_for
 import os
 
 app = Flask(__name__)
@@ -13,23 +13,17 @@ def api(path):
 
 @app.route("/embed/<path:path>")
 def embed(path):
-    arguments = ""
-    if len(request.args) > 0:
-        arguments += "?"
-        for key, val in request.args.items():
-            arguments += "{0}={1}&".format(key, val)
-        arguments = arguments[:len(arguments) - 1]
-    url = "https://titanembeds.com/embed/" + path + arguments
     if is_crawler():
-        return redirect(url, code=301)
-    return render_template("embed.html.j2", url=url)
+        return redirect(url_for("index"), code=301)
+    return render_template("embed.html.j2")
 
-@app.route('/', defaults={'path': ''})
+@app.route('/',)
+def index():
+    return render_template("index.html.j2")
+
 @app.route('/<path:path>')
 def catch_all(path):
-    if is_crawler():
-        return redirect("https://titanembeds.com/", code=301)
-    return render_template("redirect.html.j2")
+    return redirect(url_for("index"), code=301)
 
 if __name__ == '__main__':
-    app.run(host=os.getenv('IP', '0.0.0.0'), port=int(os.getenv('PORT', 8080)), debug=True)
+    app.run(host=os.getenv('IP', '0.0.0.0'), port=int(os.getenv('PORT', 3000)), debug=True)

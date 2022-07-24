@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html prefix="og: http://ogp.me/ns#">
+  <head>
+    <!--Import Google Icon Font-->
+    <link href="//fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+    <!--Import materialize.css-->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/0.100.2/css/materialize.min.css" integrity="sha256-e22BQKCF7bb/h/4MFJ1a4lTRR2OuAe8Hxa/3tgU5Taw=" crossorigin="anonymous" />
+    <link rel="stylesheet" href="{{url_for('static', filename='css/style.css')}}">
+
+    <!--Let browser know website is optimized for mobile-->
+    <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+
+    <title>Titan Embeds for Discord</title>
+    
+    <!--Provide default mobile metadata-->
+    <meta name="apple-mobile-web-app-title" content="Titan Embeds">
+    <meta name="application-name" content="Titan Embeds">
+    
+    <meta name="theme-color" content="#7986cb">
+
+    <link rel="icon" type="image/png" href="{{url_for('static', filename='img/titanembeds_round.png')}}" />
+
+    <meta name="keywords" content="Titan, Titan Embeds, TitanEmbeds, Discord, Discordapp, Embed, iFrame, Embed Discord, iFrame Discord, Widget, Bot, Server, Server Widget, Titan Embed, TitanEmbed" />
+    <meta name="description" content="Embed your Discord server in any website. Titan is hassle free and designed as easy to setup." />
+
+    <meta property="og:type" content="website" />
+    <meta property="og:url" content="https://titanembeds.com/" />
+    <meta property="og:image" content="{{url_for('static', filename='img/titanembeds_square.png')}}" />
+    <meta property="og:description" content="Embed your Discord server in any website. Titan is hassle free and designed as easy to setup." />
+  </head>
+  <body>
+    <main>
+      <nav>
+        <div class="nav-wrapper container">
+          <a href="/" class="brand-logo"><img src="{{url_for('static', filename='img/titanembeds_shield.png')}}" /><span class="hide-on-med-and-down"><strong class="align-top">Titan</strong><span class="align-top">Embeds</span></span></a>
+          <ul id="nav-mobile" class="right">
+            <li><a href="https://docs.titanembeds.com/" target="_blank" class="waves-effect hide-on-large-only">Legacy Docs</a></li>
+            <li><a href="https://docs.titanembeds.com/" target="_blank" class="waves-effect btn z-depth-3 hide-on-med-and-down">Legacy Docs</a></li>
+            
+            <li><a href="https://discord.gg/78KBwGu3GA" target="_blank" class="waves-effect hide-on-large-only">Discord</a></li>
+            <li><a href="https://discord.gg/78KBwGu3GA" target="_blank" class="waves-effect btn z-depth-3 hide-on-med-and-down">Discord</a></li>
+            
+            <li><a href="https://github.com/TitanEmbeds/Titan" class="waves-effect btn z-depth-3">Github</a></li>
+          </ul>
+        </div>
+      </nav>
+      <div class="container">
+        <h1 class="center-align">Embed Discord like a<br><strong>True Titan</strong></h1>
+        <p class="flow-text center-align">Add <strong>Titan</strong> to your Discord server to create your own personalized chat embed!</p>
+        <a class="waves-effect waves-light btn btn-large center_content" href="https://github.com/TitanEmbeds/Titan">Github Repository!</a>
+        <br /><br />
+        <div style="display: flex;align-items: center;">
+            <video preload="true" autoplay loop muted style="width:100%; border-radius: 10px;">
+                <source src="{{url_for('static', filename='video/titanembeds.mp4')}}" type="video/mp4">
+                <source src="{{url_for('static', filename='video/titanembeds.webm')}}" type="video/webm; codecs=vp8, vorbis">
+                <source type="video/ogg; codecs=theora, vorbis" src="{{url_for('static', filename='video/titanembeds.ogg')}}">
+                Your browser does not support the video tag.
+            </video>
+        </div>
+      </div>
+    </main>
+    <footer class="page-footer">
+      <div class="footer-copyright">
+        <div class="container">
+        A legacy service and project by EndenDragon
+        </div>
+      </div>
+    </footer>
+
+    <!--Import jQuery before materialize.js-->
+    <script type="text/javascript" src="//cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js" integrity="sha256-hwg4gsxgFZhOsEEamdOYGBf13FyQuiTwlAQgxVSNgt4=" crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/0.100.2/js/materialize.min.js" integrity="sha256-uWtSXRErwH9kdJTIr1swfHFJn/d/WQ6s72gELOHXQGM=" crossorigin="anonymous"></script>
+  </body>
+</html>
